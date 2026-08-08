@@ -1,0 +1,4 @@
+[tools]
+cosign = "latest"
+just = "latest"
+shellcheck = "latest"
