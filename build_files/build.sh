@@ -12,8 +12,18 @@ cp -avf "/ctx/system_files"/. /
 # List of rpmfusion packages can be found here:
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/43/x86_64/repoview/index.html&protocol=https&redirect=1
 
-# this installs a package from fedora repos
-dnf5 install -y tmux
+# Client config is pulled from the server rather than committed under system_files/, so the
+# repo definition has a single source of truth. The .repo file it serves carries the gpgkey
+# URL, which dnf imports during the transaction below.
+dnf5 -y config-manager addrepo --from-repofile=https://rpm.vries.cloud/saeverix.repo
+
+# Wayland desktop stack. aquamarine, hyprcursor, hyprgraphics, hyprlang, hyprutils, hyprwire
+# and scenefx come in as dependencies; the -devel packages are build-time only and stay out.
+# fish resolves to the saeverix build while it outranks Fedora's (4.8.1 vs 4.6.0).
+dnf5 install -y \
+    mangowm \
+    noctalia \
+    fish
 
 # Use a COPR Example:
 #
