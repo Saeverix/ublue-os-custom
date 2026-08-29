@@ -29,3 +29,4 @@ jobs:
         uses: AndreasAugustin/actions-template-sync@v2
         with:
           source_repo_path: ublue-os/image-template
+          target_gh_token: ${{ secrets.PAT_TOKEN }}
