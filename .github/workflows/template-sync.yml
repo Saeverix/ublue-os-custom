@@ -27,4 +27,5 @@ jobs:
       - name: actions-template-sync
         uses: AndreasAugustin/actions-template-sync@v2
         with:
+          github_token: ${{ secrets.PAT_TOKEN }}
           source_repo_path: ublue-os/image-template
