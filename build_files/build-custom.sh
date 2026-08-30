@@ -17,4 +17,6 @@ dnf5 install -y \
     noctalia \
     fish
 
-curl https://mise.run/fish | sh
+### Set fish as the default shell for root and future users
+usermod -s /usr/bin/fish root
+sed -i 's|^SHELL=.*|SHELL=/usr/bin/fish|' /etc/default/useradd
