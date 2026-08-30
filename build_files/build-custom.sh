@@ -16,3 +16,5 @@ dnf5 install -y \
     mangowm \
     noctalia \
     fish
+
+curl https://mise.run/fish | sh
