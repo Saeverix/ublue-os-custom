@@ -15,7 +15,8 @@ dnf5 -y config-manager addrepo --from-repofile=https://rpm.vries.cloud/saeverix.
 dnf5 install -y \
     mangowm \
     noctalia \
-    fish
+    fish \
+    ghostty
 
 ### Set fish as the default shell for root and future users
 usermod -s /usr/bin/fish root
