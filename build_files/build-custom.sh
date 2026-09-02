@@ -12,12 +12,24 @@ cp -avf "/ctx/system_files"/. /
 # URL, which dnf imports during the transaction below.
 dnf5 -y config-manager addrepo --from-repofile=https://rpm.vries.cloud/saeverix.repo
 
+dnf5 remove -y \
+    nvtop \
+    htop
+
 dnf5 install -y \
     mangowm \
     noctalia \
     fish \
-    ghostty
+    ghostty \
+    btop \
+    nautilus \
+    gvfs \
+    xdg-desktop-portal-wlr \
+    xwayland-satellite
 
 ### Set fish as the default shell for root and future users
 usermod -s /usr/bin/fish root
 sed -i 's|^SHELL=.*|SHELL=/usr/bin/fish|' /etc/default/useradd
+
+## Unlock keyring on login
+sed -i -E 's/^-([a-z]+[[:space:]]+.*pam_gnome_keyring\.so)/\1/' /etc/pam.d/greetd
