@@ -25,7 +25,9 @@ dnf5 install -y \
     nautilus \
     gvfs \
     xdg-desktop-portal-wlr \
-    xwayland-satellite
+    xwayland-satellite \
+    greetd \
+    tuigreet
 
 ### Set fish as the default shell for root and future users
 usermod -s /usr/bin/fish root
