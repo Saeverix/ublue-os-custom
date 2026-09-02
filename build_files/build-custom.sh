@@ -26,9 +26,12 @@ dnf5 install -y \
     gvfs \
     xdg-desktop-portal-wlr \
     xwayland-satellite \
+    gnome-disk-utility \
     gnome-keyring-pam \
     greetd \
-    tuigreet
+    tuigreet \
+    steam \
+    mangohud
 
 ### Set fish as the default shell for root and future users
 usermod -s /usr/bin/fish root
