@@ -18,7 +18,7 @@ jobs:
     steps:
       # To use this repository's private action, you must check out the repository
       - name: Checkout
-        uses: actions/checkout@v7
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
         # https://github.com/actions/checkout#usage
         # uncomment if you use submodules within the repository
         with:
@@ -26,7 +26,7 @@ jobs:
         #   submodules: true
 
       - name: actions-template-sync
-        uses: AndreasAugustin/actions-template-sync@v2
+        uses: AndreasAugustin/actions-template-sync@8a0f668b83c32a0f673353086d74f12b8853d4f5 # v2
         with:
           source_repo_path: ublue-os/image-template
           target_gh_token: ${{ secrets.PAT_TOKEN }}
