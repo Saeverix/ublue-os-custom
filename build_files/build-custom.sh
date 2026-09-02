@@ -33,5 +33,8 @@ dnf5 install -y \
 usermod -s /usr/bin/fish root
 sed -i 's|^SHELL=.*|SHELL=/usr/bin/fish|' /etc/default/useradd
 
-## Unlock keyring on login
+### Unlock keyring on login
 sed -i -E 's/^-([a-z]+[[:space:]]+.*pam_gnome_keyring\.so)/\1/' /etc/pam.d/greetd
+
+### Enable services
+systemctl enable greetd
